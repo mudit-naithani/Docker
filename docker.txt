@@ -1,0 +1,48 @@
+to pull the image					- docker pull ubuntu
+
+to run the container					- docker run ubuntu
+
+to run the container with the image version		- docker run ubuntu:17.04  **if tag not specified, docker takes the "latest" tag
+
+to check the container IP				- docker inspect <container id>
+
+list all running containrs 				- docker ps
+
+list all running and previously exited containers	- docler ps -a
+
+stopping the container					- docker stop <container id>
+
+removing stopped containers permanently	from disk	- docker rm <container id>
+
+to see the downoaded images 				- docker images
+
+removing images						- docker rmi <image id>   **Delete all dependent containers first to remove the image**
+
+to run a command in the running container		- docker exec <container id> cat /etc/hosts
+
+run the image with a command and login to the container	- docker run -it centos bash		**bash is the command, -it is for input/terminal direct login**
+
+running a container in background 			- docker -d run centos sleep 20		** -d is to run in background/detached mode**
+
+connecting to the container running in background	- docker attach <container id>
+
+mapping ports of container to docker host to run service- docker run -p 80:5000 mmumshad/simple-webapp  **80-docker host, 5000-container port port**
+
+for volume mapping					- docker run -v /opt/datadir:/var/lib/sql mysql   **The first argument is always for the docker host and second for the container**
+
+to run a dockerfile					- docker build Dockerfile -t mmumshad/my-custom-app
+
+to push an image to docker hub				- docker push mmumshad/my-first-image      **You can only push to your repository**
+
+to start the docker compose containers			- docker-compose up
+
+to stop the docker compose containers			- docker-compose stop
+
+to bring down all the containers in docker compose file	- docker-compose down
+ 
+docker swarm						- docker swarm init
+
+on nodes						- docker swarm join
+
+to deploy all services accross using swarm		- docker stack deploy -c docker-compose.yml
+
