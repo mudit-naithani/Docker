@@ -1,0 +1,16 @@
+commands:  Default location : /var/lib/docker
+
+check the steps of how image was built  : docker history <image id>
+
+disk usage of docker images and containers	: docker system df
+
+
+Running docker in a separate laptop	: docker -H=remote-docker-engine:2375	**remote-docker-engine-host IP where docker is installed**
+Example: docker -H=10.123.2.1:2375 run nginx
+
+to control the CPU usage of the host	: docker run --cpus=.5 ubuntu	   **container does not take more than 50% of the host CPU usage**
+
+to control the memory of the host	: docker run --memory=100m ubuntu  **container does not take more than 100 MB of the host memory**
+
+
+Namespaces				: Provides mutiple process ID's to a single process, one pid running in container, different pid in host but the process is just one only
